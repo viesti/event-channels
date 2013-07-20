@@ -29977,11 +29977,15 @@ goog.require("domina");
 goog.require("cljs.core.async");
 polyline.draw_linestrip = function draw_linestrip(linestrip, context) {
   context.beginPath();
-  var fst_14247 = cljs.core.first.call(null, linestrip);
-  context.moveTo(cljs.core.first.call(null, fst_14247), cljs.core.second.call(null, fst_14247));
-  cljs.core.dorun.call(null, cljs.core.map.call(null, function(p1__13992_SHARP_) {
-    return context.lineTo(cljs.core.first.call(null, p1__13992_SHARP_), cljs.core.second.call(null, p1__13992_SHARP_))
-  }, cljs.core.rest.call(null, linestrip)));
+  var temp__4092__auto___15824 = cljs.core.first.call(null, linestrip);
+  if(cljs.core.truth_(temp__4092__auto___15824)) {
+    var start_15825 = temp__4092__auto___15824;
+    context.moveTo(cljs.core.first.call(null, start_15825), cljs.core.second.call(null, start_15825));
+    cljs.core.dorun.call(null, cljs.core.map.call(null, function(p1__15569_SHARP_) {
+      return context.lineTo(cljs.core.first.call(null, p1__15569_SHARP_), cljs.core.second.call(null, p1__15569_SHARP_))
+    }, cljs.core.rest.call(null, linestrip)))
+  }else {
+  }
   return context.stroke()
 };
 polyline.add_coordinates = function add_coordinates(m, evt, bounds) {
@@ -29998,28 +30002,28 @@ polyline.start = function start() {
       var f__4756__auto__ = function() {
         var state_machine__4682__auto__ = null;
         var state_machine__4682__auto____0 = function() {
-          var statearr_14380 = new Array(5);
-          statearr_14380[0] = state_machine__4682__auto__;
-          statearr_14380[1] = 1;
-          return statearr_14380
+          var statearr_15958 = new Array(5);
+          statearr_15958[0] = state_machine__4682__auto__;
+          statearr_15958[1] = 1;
+          return statearr_15958
         };
-        var state_machine__4682__auto____1 = function(state_14377) {
+        var state_machine__4682__auto____1 = function(state_15955) {
           while(true) {
             var result__4683__auto__ = function() {
-              var G__14381 = state_14377[1] | 0;
-              if(cljs.core._EQ_.call(null, 1, G__14381)) {
-                var inst_14372 = cljs.core.hash_map.call(null, "\ufdd0:type", "\ufdd0:mousedown");
-                var inst_14373 = polyline.add_coordinates.call(null, inst_14372, evt, bounds);
-                var state_14377__$1 = state_14377;
-                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_14377__$1, 2, events, inst_14373)
+              var G__15959 = state_15955[1] | 0;
+              if(cljs.core._EQ_.call(null, 1, G__15959)) {
+                var inst_15950 = cljs.core.hash_map.call(null, "\ufdd0:type", "\ufdd0:mousedown");
+                var inst_15951 = polyline.add_coordinates.call(null, inst_15950, evt, bounds);
+                var state_15955__$1 = state_15955;
+                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_15955__$1, 2, events, inst_15951)
               }else {
-                if(cljs.core._EQ_.call(null, 2, G__14381)) {
-                  var inst_14375 = state_14377[2];
-                  var state_14377__$1 = state_14377;
-                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_14377__$1, inst_14375)
+                if(cljs.core._EQ_.call(null, 2, G__15959)) {
+                  var inst_15953 = state_15955[2];
+                  var state_15955__$1 = state_15955;
+                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_15955__$1, inst_15953)
                 }else {
                   if("\ufdd0:else") {
-                    throw new Error([cljs.core.str("No matching clause: "), cljs.core.str(state_14377[1] | 0)].join(""));
+                    throw new Error([cljs.core.str("No matching clause: "), cljs.core.str(state_15955[1] | 0)].join(""));
                   }else {
                     return null
                   }
@@ -30034,12 +30038,12 @@ polyline.start = function start() {
             break
           }
         };
-        state_machine__4682__auto__ = function(state_14377) {
+        state_machine__4682__auto__ = function(state_15955) {
           switch(arguments.length) {
             case 0:
               return state_machine__4682__auto____0.call(this);
             case 1:
-              return state_machine__4682__auto____1.call(this, state_14377)
+              return state_machine__4682__auto____1.call(this, state_15955)
           }
           throw new Error("Invalid arity: " + arguments.length);
         };
@@ -30048,9 +30052,9 @@ polyline.start = function start() {
         return state_machine__4682__auto__
       }();
       var state__4757__auto__ = function() {
-        var statearr_14382 = f__4756__auto__.call(null);
-        statearr_14382[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__4755__auto__;
-        return statearr_14382
+        var statearr_15960 = f__4756__auto__.call(null);
+        statearr_15960[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__4755__auto__;
+        return statearr_15960
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine.call(null, state__4757__auto__)
     });
@@ -30062,28 +30066,28 @@ polyline.start = function start() {
       var f__4756__auto__ = function() {
         var state_machine__4682__auto__ = null;
         var state_machine__4682__auto____0 = function() {
-          var statearr_14391 = new Array(5);
-          statearr_14391[0] = state_machine__4682__auto__;
-          statearr_14391[1] = 1;
-          return statearr_14391
+          var statearr_15969 = new Array(5);
+          statearr_15969[0] = state_machine__4682__auto__;
+          statearr_15969[1] = 1;
+          return statearr_15969
         };
-        var state_machine__4682__auto____1 = function(state_14388) {
+        var state_machine__4682__auto____1 = function(state_15966) {
           while(true) {
             var result__4683__auto__ = function() {
-              var G__14392 = state_14388[1] | 0;
-              if(cljs.core._EQ_.call(null, 1, G__14392)) {
-                var inst_14383 = cljs.core.hash_map.call(null, "\ufdd0:type", "\ufdd0:mousemove");
-                var inst_14384 = polyline.add_coordinates.call(null, inst_14383, evt, bounds);
-                var state_14388__$1 = state_14388;
-                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_14388__$1, 2, events, inst_14384)
+              var G__15970 = state_15966[1] | 0;
+              if(cljs.core._EQ_.call(null, 1, G__15970)) {
+                var inst_15961 = cljs.core.hash_map.call(null, "\ufdd0:type", "\ufdd0:mousemove");
+                var inst_15962 = polyline.add_coordinates.call(null, inst_15961, evt, bounds);
+                var state_15966__$1 = state_15966;
+                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_15966__$1, 2, events, inst_15962)
               }else {
-                if(cljs.core._EQ_.call(null, 2, G__14392)) {
-                  var inst_14386 = state_14388[2];
-                  var state_14388__$1 = state_14388;
-                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_14388__$1, inst_14386)
+                if(cljs.core._EQ_.call(null, 2, G__15970)) {
+                  var inst_15964 = state_15966[2];
+                  var state_15966__$1 = state_15966;
+                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_15966__$1, inst_15964)
                 }else {
                   if("\ufdd0:else") {
-                    throw new Error([cljs.core.str("No matching clause: "), cljs.core.str(state_14388[1] | 0)].join(""));
+                    throw new Error([cljs.core.str("No matching clause: "), cljs.core.str(state_15966[1] | 0)].join(""));
                   }else {
                     return null
                   }
@@ -30098,12 +30102,12 @@ polyline.start = function start() {
             break
           }
         };
-        state_machine__4682__auto__ = function(state_14388) {
+        state_machine__4682__auto__ = function(state_15966) {
           switch(arguments.length) {
             case 0:
               return state_machine__4682__auto____0.call(this);
             case 1:
-              return state_machine__4682__auto____1.call(this, state_14388)
+              return state_machine__4682__auto____1.call(this, state_15966)
           }
           throw new Error("Invalid arity: " + arguments.length);
         };
@@ -30112,9 +30116,9 @@ polyline.start = function start() {
         return state_machine__4682__auto__
       }();
       var state__4757__auto__ = function() {
-        var statearr_14393 = f__4756__auto__.call(null);
-        statearr_14393[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__4755__auto__;
-        return statearr_14393
+        var statearr_15971 = f__4756__auto__.call(null);
+        statearr_15971[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__4755__auto__;
+        return statearr_15971
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine.call(null, state__4757__auto__)
     });
@@ -30125,210 +30129,210 @@ polyline.start = function start() {
     var f__4756__auto__ = function() {
       var state_machine__4682__auto__ = null;
       var state_machine__4682__auto____0 = function() {
-        var statearr_14468 = new Array(14);
-        statearr_14468[0] = state_machine__4682__auto__;
-        statearr_14468[1] = 1;
-        return statearr_14468
+        var statearr_16046 = new Array(14);
+        statearr_16046[0] = state_machine__4682__auto__;
+        statearr_16046[1] = 1;
+        return statearr_16046
       };
-      var state_machine__4682__auto____1 = function(state_14440) {
+      var state_machine__4682__auto____1 = function(state_16018) {
         while(true) {
           var result__4683__auto__ = function() {
-            var G__14469 = state_14440[1] | 0;
-            if(cljs.core._EQ_.call(null, 1, G__14469)) {
-              var inst_14394 = cljs.core.vector.call(null);
-              var inst_14395 = inst_14394;
-              var state_14440__$1 = function() {
-                var statearr_14470 = state_14440;
-                statearr_14470[5] = inst_14395;
-                return statearr_14470
+            var G__16047 = state_16018[1] | 0;
+            if(cljs.core._EQ_.call(null, 1, G__16047)) {
+              var inst_15972 = cljs.core.vector.call(null);
+              var inst_15973 = inst_15972;
+              var state_16018__$1 = function() {
+                var statearr_16048 = state_16018;
+                statearr_16048[5] = inst_15973;
+                return statearr_16048
               }();
-              var statearr_14471_14496 = state_14440__$1;
-              statearr_14471_14496[2] = null;
-              statearr_14471_14496[1] = 2;
+              var statearr_16049_16074 = state_16018__$1;
+              statearr_16049_16074[2] = null;
+              statearr_16049_16074[1] = 2;
               return"\ufdd0:recur"
             }else {
-              if(cljs.core._EQ_.call(null, 2, G__14469)) {
-                var state_14440__$1 = state_14440;
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_14440__$1, 4, events)
+              if(cljs.core._EQ_.call(null, 2, G__16047)) {
+                var state_16018__$1 = state_16018;
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_16018__$1, 4, events)
               }else {
-                if(cljs.core._EQ_.call(null, 3, G__14469)) {
-                  var inst_14438 = state_14440[2];
-                  var state_14440__$1 = state_14440;
-                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_14440__$1, inst_14438)
+                if(cljs.core._EQ_.call(null, 3, G__16047)) {
+                  var inst_16016 = state_16018[2];
+                  var state_16018__$1 = state_16018;
+                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_16018__$1, inst_16016)
                 }else {
-                  if(cljs.core._EQ_.call(null, 4, G__14469)) {
-                    var inst_14398 = state_14440[6];
-                    var inst_14398__$1 = state_14440[2];
-                    var state_14440__$1 = function() {
-                      var statearr_14472 = state_14440;
-                      statearr_14472[6] = inst_14398__$1;
-                      return statearr_14472
+                  if(cljs.core._EQ_.call(null, 4, G__16047)) {
+                    var inst_15976 = state_16018[6];
+                    var inst_15976__$1 = state_16018[2];
+                    var state_16018__$1 = function() {
+                      var statearr_16050 = state_16018;
+                      statearr_16050[6] = inst_15976__$1;
+                      return statearr_16050
                     }();
-                    if(cljs.core.truth_(inst_14398__$1)) {
-                      var statearr_14473_14497 = state_14440__$1;
-                      statearr_14473_14497[1] = 5
+                    if(cljs.core.truth_(inst_15976__$1)) {
+                      var statearr_16051_16075 = state_16018__$1;
+                      statearr_16051_16075[1] = 5
                     }else {
-                      var statearr_14474_14498 = state_14440__$1;
-                      statearr_14474_14498[1] = 6
+                      var statearr_16052_16076 = state_16018__$1;
+                      statearr_16052_16076[1] = 6
                     }
                     return"\ufdd0:recur"
                   }else {
-                    if(cljs.core._EQ_.call(null, 5, G__14469)) {
-                      var inst_14403 = state_14440[7];
-                      var inst_14398 = state_14440[6];
-                      var inst_14403__$1 = (new cljs.core.Keyword("\ufdd0:type")).call(null, inst_14398);
-                      var inst_14404 = cljs.core._EQ_.call(null, "\ufdd0:mousemove", inst_14403__$1);
-                      var state_14440__$1 = function() {
-                        var statearr_14475 = state_14440;
-                        statearr_14475[7] = inst_14403__$1;
-                        return statearr_14475
+                    if(cljs.core._EQ_.call(null, 5, G__16047)) {
+                      var inst_15981 = state_16018[7];
+                      var inst_15976 = state_16018[6];
+                      var inst_15981__$1 = (new cljs.core.Keyword("\ufdd0:type")).call(null, inst_15976);
+                      var inst_15982 = cljs.core._EQ_.call(null, "\ufdd0:mousemove", inst_15981__$1);
+                      var state_16018__$1 = function() {
+                        var statearr_16053 = state_16018;
+                        statearr_16053[7] = inst_15981__$1;
+                        return statearr_16053
                       }();
-                      if(inst_14404) {
-                        var statearr_14476_14499 = state_14440__$1;
-                        statearr_14476_14499[1] = 8
+                      if(inst_15982) {
+                        var statearr_16054_16077 = state_16018__$1;
+                        statearr_16054_16077[1] = 8
                       }else {
-                        var statearr_14477_14500 = state_14440__$1;
-                        statearr_14477_14500[1] = 9
+                        var statearr_16055_16078 = state_16018__$1;
+                        statearr_16055_16078[1] = 9
                       }
                       return"\ufdd0:recur"
                     }else {
-                      if(cljs.core._EQ_.call(null, 6, G__14469)) {
-                        var state_14440__$1 = state_14440;
-                        var statearr_14478_14501 = state_14440__$1;
-                        statearr_14478_14501[2] = null;
-                        statearr_14478_14501[1] = 7;
+                      if(cljs.core._EQ_.call(null, 6, G__16047)) {
+                        var state_16018__$1 = state_16018;
+                        var statearr_16056_16079 = state_16018__$1;
+                        statearr_16056_16079[2] = null;
+                        statearr_16056_16079[1] = 7;
                         return"\ufdd0:recur"
                       }else {
-                        if(cljs.core._EQ_.call(null, 7, G__14469)) {
-                          var inst_14436 = state_14440[2];
-                          var state_14440__$1 = state_14440;
-                          var statearr_14479_14502 = state_14440__$1;
-                          statearr_14479_14502[2] = inst_14436;
-                          statearr_14479_14502[1] = 3;
+                        if(cljs.core._EQ_.call(null, 7, G__16047)) {
+                          var inst_16014 = state_16018[2];
+                          var state_16018__$1 = state_16018;
+                          var statearr_16057_16080 = state_16018__$1;
+                          statearr_16057_16080[2] = inst_16014;
+                          statearr_16057_16080[1] = 3;
                           return"\ufdd0:recur"
                         }else {
-                          if(cljs.core._EQ_.call(null, 8, G__14469)) {
-                            var inst_14406 = state_14440[8];
-                            var inst_14395 = state_14440[5];
-                            var inst_14406__$1 = cljs.core.peek.call(null, inst_14395);
-                            var state_14440__$1 = function() {
-                              var statearr_14480 = state_14440;
-                              statearr_14480[8] = inst_14406__$1;
-                              return statearr_14480
+                          if(cljs.core._EQ_.call(null, 8, G__16047)) {
+                            var inst_15984 = state_16018[8];
+                            var inst_15973 = state_16018[5];
+                            var inst_15984__$1 = cljs.core.peek.call(null, inst_15973);
+                            var state_16018__$1 = function() {
+                              var statearr_16058 = state_16018;
+                              statearr_16058[8] = inst_15984__$1;
+                              return statearr_16058
                             }();
-                            if(cljs.core.truth_(inst_14406__$1)) {
-                              var statearr_14481_14503 = state_14440__$1;
-                              statearr_14481_14503[1] = 11
+                            if(cljs.core.truth_(inst_15984__$1)) {
+                              var statearr_16059_16081 = state_16018__$1;
+                              statearr_16059_16081[1] = 11
                             }else {
-                              var statearr_14482_14504 = state_14440__$1;
-                              statearr_14482_14504[1] = 12
+                              var statearr_16060_16082 = state_16018__$1;
+                              statearr_16060_16082[1] = 12
                             }
                             return"\ufdd0:recur"
                           }else {
-                            if(cljs.core._EQ_.call(null, 9, G__14469)) {
-                              var inst_14403 = state_14440[7];
-                              var inst_14419 = cljs.core._EQ_.call(null, "\ufdd0:mousedown", inst_14403);
-                              var state_14440__$1 = state_14440;
-                              if(inst_14419) {
-                                var statearr_14483_14505 = state_14440__$1;
-                                statearr_14483_14505[1] = 14
+                            if(cljs.core._EQ_.call(null, 9, G__16047)) {
+                              var inst_15981 = state_16018[7];
+                              var inst_15997 = cljs.core._EQ_.call(null, "\ufdd0:mousedown", inst_15981);
+                              var state_16018__$1 = state_16018;
+                              if(inst_15997) {
+                                var statearr_16061_16083 = state_16018__$1;
+                                statearr_16061_16083[1] = 14
                               }else {
-                                var statearr_14484_14506 = state_14440__$1;
-                                statearr_14484_14506[1] = 15
+                                var statearr_16062_16084 = state_16018__$1;
+                                statearr_16062_16084[1] = 15
                               }
                               return"\ufdd0:recur"
                             }else {
-                              if(cljs.core._EQ_.call(null, 10, G__14469)) {
-                                var inst_14395 = state_14440[5];
-                                var inst_14432 = state_14440[2];
-                                var inst_14395__$1 = inst_14395;
-                                var state_14440__$1 = function() {
-                                  var statearr_14485 = state_14440;
-                                  statearr_14485[9] = inst_14432;
-                                  statearr_14485[5] = inst_14395__$1;
-                                  return statearr_14485
+                              if(cljs.core._EQ_.call(null, 10, G__16047)) {
+                                var inst_15973 = state_16018[5];
+                                var inst_16010 = state_16018[2];
+                                var inst_15973__$1 = inst_15973;
+                                var state_16018__$1 = function() {
+                                  var statearr_16063 = state_16018;
+                                  statearr_16063[5] = inst_15973__$1;
+                                  statearr_16063[9] = inst_16010;
+                                  return statearr_16063
                                 }();
-                                var statearr_14486_14507 = state_14440__$1;
-                                statearr_14486_14507[2] = null;
-                                statearr_14486_14507[1] = 2;
+                                var statearr_16064_16085 = state_16018__$1;
+                                statearr_16064_16085[2] = null;
+                                statearr_16064_16085[1] = 2;
                                 return"\ufdd0:recur"
                               }else {
-                                if(cljs.core._EQ_.call(null, 11, G__14469)) {
-                                  var inst_14406 = state_14440[8];
-                                  var inst_14398 = state_14440[6];
-                                  var inst_14395 = state_14440[5];
-                                  var inst_14408 = context.clearRect(0, 0, 500, 500);
-                                  var inst_14409 = polyline.draw_linestrip.call(null, inst_14395, context);
-                                  var inst_14410 = (new cljs.core.Keyword("\ufdd0:x")).call(null, inst_14398);
-                                  var inst_14411 = (new cljs.core.Keyword("\ufdd0:y")).call(null, inst_14398);
-                                  var inst_14412 = cljs.core.vector.call(null, inst_14410, inst_14411);
-                                  var inst_14413 = cljs.core.vector.call(null, inst_14406, inst_14412);
-                                  var inst_14414 = polyline.draw_linestrip.call(null, inst_14413, context);
-                                  var state_14440__$1 = function() {
-                                    var statearr_14487 = state_14440;
-                                    statearr_14487[10] = inst_14409;
-                                    statearr_14487[11] = inst_14408;
-                                    return statearr_14487
+                                if(cljs.core._EQ_.call(null, 11, G__16047)) {
+                                  var inst_15984 = state_16018[8];
+                                  var inst_15976 = state_16018[6];
+                                  var inst_15973 = state_16018[5];
+                                  var inst_15986 = context.clearRect(0, 0, 500, 500);
+                                  var inst_15987 = polyline.draw_linestrip.call(null, inst_15973, context);
+                                  var inst_15988 = (new cljs.core.Keyword("\ufdd0:x")).call(null, inst_15976);
+                                  var inst_15989 = (new cljs.core.Keyword("\ufdd0:y")).call(null, inst_15976);
+                                  var inst_15990 = cljs.core.vector.call(null, inst_15988, inst_15989);
+                                  var inst_15991 = cljs.core.vector.call(null, inst_15984, inst_15990);
+                                  var inst_15992 = polyline.draw_linestrip.call(null, inst_15991, context);
+                                  var state_16018__$1 = function() {
+                                    var statearr_16065 = state_16018;
+                                    statearr_16065[10] = inst_15987;
+                                    statearr_16065[11] = inst_15986;
+                                    return statearr_16065
                                   }();
-                                  var statearr_14488_14508 = state_14440__$1;
-                                  statearr_14488_14508[2] = inst_14414;
-                                  statearr_14488_14508[1] = 13;
+                                  var statearr_16066_16086 = state_16018__$1;
+                                  statearr_16066_16086[2] = inst_15992;
+                                  statearr_16066_16086[1] = 13;
                                   return"\ufdd0:recur"
                                 }else {
-                                  if(cljs.core._EQ_.call(null, 12, G__14469)) {
-                                    var state_14440__$1 = state_14440;
-                                    var statearr_14489_14509 = state_14440__$1;
-                                    statearr_14489_14509[2] = null;
-                                    statearr_14489_14509[1] = 13;
+                                  if(cljs.core._EQ_.call(null, 12, G__16047)) {
+                                    var state_16018__$1 = state_16018;
+                                    var statearr_16067_16087 = state_16018__$1;
+                                    statearr_16067_16087[2] = null;
+                                    statearr_16067_16087[1] = 13;
                                     return"\ufdd0:recur"
                                   }else {
-                                    if(cljs.core._EQ_.call(null, 13, G__14469)) {
-                                      var inst_14417 = state_14440[2];
-                                      var state_14440__$1 = state_14440;
-                                      var statearr_14490_14510 = state_14440__$1;
-                                      statearr_14490_14510[2] = inst_14417;
-                                      statearr_14490_14510[1] = 10;
+                                    if(cljs.core._EQ_.call(null, 13, G__16047)) {
+                                      var inst_15995 = state_16018[2];
+                                      var state_16018__$1 = state_16018;
+                                      var statearr_16068_16088 = state_16018__$1;
+                                      statearr_16068_16088[2] = inst_15995;
+                                      statearr_16068_16088[1] = 10;
                                       return"\ufdd0:recur"
                                     }else {
-                                      if(cljs.core._EQ_.call(null, 14, G__14469)) {
-                                        var inst_14398 = state_14440[6];
-                                        var inst_14395 = state_14440[5];
-                                        var inst_14421 = (new cljs.core.Keyword("\ufdd0:x")).call(null, inst_14398);
-                                        var inst_14422 = (new cljs.core.Keyword("\ufdd0:y")).call(null, inst_14398);
-                                        var inst_14423 = cljs.core.vector.call(null, inst_14421, inst_14422);
-                                        var inst_14424 = cljs.core.conj.call(null, inst_14395, inst_14423);
-                                        var inst_14425 = context.clearRect(0, 0, 500, 500);
-                                        var inst_14426 = polyline.draw_linestrip.call(null, inst_14424, context);
-                                        var inst_14395__$1 = inst_14424;
-                                        var state_14440__$1 = function() {
-                                          var statearr_14491 = state_14440;
-                                          statearr_14491[12] = inst_14426;
-                                          statearr_14491[13] = inst_14425;
-                                          statearr_14491[5] = inst_14395__$1;
-                                          return statearr_14491
+                                      if(cljs.core._EQ_.call(null, 14, G__16047)) {
+                                        var inst_15976 = state_16018[6];
+                                        var inst_15973 = state_16018[5];
+                                        var inst_15999 = (new cljs.core.Keyword("\ufdd0:x")).call(null, inst_15976);
+                                        var inst_16000 = (new cljs.core.Keyword("\ufdd0:y")).call(null, inst_15976);
+                                        var inst_16001 = cljs.core.vector.call(null, inst_15999, inst_16000);
+                                        var inst_16002 = cljs.core.conj.call(null, inst_15973, inst_16001);
+                                        var inst_16003 = context.clearRect(0, 0, 500, 500);
+                                        var inst_16004 = polyline.draw_linestrip.call(null, inst_16002, context);
+                                        var inst_15973__$1 = inst_16002;
+                                        var state_16018__$1 = function() {
+                                          var statearr_16069 = state_16018;
+                                          statearr_16069[5] = inst_15973__$1;
+                                          statearr_16069[12] = inst_16004;
+                                          statearr_16069[13] = inst_16003;
+                                          return statearr_16069
                                         }();
-                                        var statearr_14492_14511 = state_14440__$1;
-                                        statearr_14492_14511[2] = null;
-                                        statearr_14492_14511[1] = 2;
+                                        var statearr_16070_16089 = state_16018__$1;
+                                        statearr_16070_16089[2] = null;
+                                        statearr_16070_16089[1] = 2;
                                         return"\ufdd0:recur"
                                       }else {
-                                        if(cljs.core._EQ_.call(null, 15, G__14469)) {
-                                          var state_14440__$1 = state_14440;
-                                          var statearr_14493_14512 = state_14440__$1;
-                                          statearr_14493_14512[2] = null;
-                                          statearr_14493_14512[1] = 16;
+                                        if(cljs.core._EQ_.call(null, 15, G__16047)) {
+                                          var state_16018__$1 = state_16018;
+                                          var statearr_16071_16090 = state_16018__$1;
+                                          statearr_16071_16090[2] = null;
+                                          statearr_16071_16090[1] = 16;
                                           return"\ufdd0:recur"
                                         }else {
-                                          if(cljs.core._EQ_.call(null, 16, G__14469)) {
-                                            var inst_14430 = state_14440[2];
-                                            var state_14440__$1 = state_14440;
-                                            var statearr_14494_14513 = state_14440__$1;
-                                            statearr_14494_14513[2] = inst_14430;
-                                            statearr_14494_14513[1] = 10;
+                                          if(cljs.core._EQ_.call(null, 16, G__16047)) {
+                                            var inst_16008 = state_16018[2];
+                                            var state_16018__$1 = state_16018;
+                                            var statearr_16072_16091 = state_16018__$1;
+                                            statearr_16072_16091[2] = inst_16008;
+                                            statearr_16072_16091[1] = 10;
                                             return"\ufdd0:recur"
                                           }else {
                                             if("\ufdd0:else") {
-                                              throw new Error([cljs.core.str("No matching clause: "), cljs.core.str(state_14440[1] | 0)].join(""));
+                                              throw new Error([cljs.core.str("No matching clause: "), cljs.core.str(state_16018[1] | 0)].join(""));
                                             }else {
                                               return null
                                             }
@@ -30357,12 +30361,12 @@ polyline.start = function start() {
           break
         }
       };
-      state_machine__4682__auto__ = function(state_14440) {
+      state_machine__4682__auto__ = function(state_16018) {
         switch(arguments.length) {
           case 0:
             return state_machine__4682__auto____0.call(this);
           case 1:
-            return state_machine__4682__auto____1.call(this, state_14440)
+            return state_machine__4682__auto____1.call(this, state_16018)
         }
         throw new Error("Invalid arity: " + arguments.length);
       };
@@ -30371,9 +30375,9 @@ polyline.start = function start() {
       return state_machine__4682__auto__
     }();
     var state__4757__auto__ = function() {
-      var statearr_14495 = f__4756__auto__.call(null);
-      statearr_14495[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__4755__auto__;
-      return statearr_14495
+      var statearr_16073 = f__4756__auto__.call(null);
+      statearr_16073[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__4755__auto__;
+      return statearr_16073
     }();
     return cljs.core.async.impl.ioc_helpers.run_state_machine.call(null, state__4757__auto__)
   });

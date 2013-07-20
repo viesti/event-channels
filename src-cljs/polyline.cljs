@@ -6,9 +6,9 @@
 
 (defn draw-linestrip [linestrip context]
   (.beginPath context)
-  (let [fst (first linestrip)]
-    (.moveTo context (first fst) (second fst)))
-  (dorun (map #(.lineTo context (first %) (second %)) (rest linestrip)))
+  (when-let [start (first linestrip)]
+    (.moveTo context (first start) (second start))
+    (dorun (map #(.lineTo context (first %) (second %)) (rest linestrip))))
   (.stroke context))
 
 (defn add-coordinates [m evt bounds]
