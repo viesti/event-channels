@@ -8,6 +8,7 @@
   :repositories {"sonatype-oss-public" "https://oss.sonatype.org/content/groups/public/"}
   :jvm-opts [~(str "-Xbootclasspath/a:" (.. System (getProperties) (get "java.home")) "/lib/jfxrt.jar")]
   :plugins [[lein-cljsbuild "0.3.2"]]
+  :aliases {"start" ["run" "-m" "polyline/start"]}
   :cljsbuild {:builds [{:source-paths ["src-cljs"]
                         :notify-command ["growlnotify" "-m"]
                         :compiler {
